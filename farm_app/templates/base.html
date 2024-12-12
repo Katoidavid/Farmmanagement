@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  {% load static %}
+  <title>{% block title %}Phoemark Farm{% endblock %}</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'assets/img/farm_icon.png' %}">
+  <meta name="description" content="{% block meta_description %}Phoemark Farm: Organic Produce, Quality, and Satisfaction{% endblock %}">
+  <meta name="keywords" content="{% block meta_keywords %}organic, farm, quality products, fresh produce{% endblock %}">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="{% block body_class %}index-page{% endblock %}">
+  <!-- Header -->
+  <header id="header" class="header">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <a href="{% url 'home' %}" class="logo">
+        <img src="{% static 'assets/img/farm_logo.png' %}" alt="logo" class="img-fluid">
+        <h1>Phoemark Farm</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'home' %}" class="active">Home</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'shop' %}">Products</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+        <i class="mobile-nav-toggle bi bi-list"></i>
+      </nav>
+      <div class="header-social-links">
+        <a href="https://twitter.com/AntonyKatoi" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.facebook.com/AntonyKatoi" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/AntonyKatoiDavid" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/AntonyKatoi" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content-->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!--footer-->
+<footer id="footer" class="footer">
+  <div class="container">
+    <!-- Centered Copyright Text -->
+   <div class="copyright">
+    <p>&copy; <strong>Phoemark Farm</strong> All Rights Reserved.</p>
+    <p>Designed by <a href="#">Antony Katoi</a></p>
+  </div>
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <a href="https://twitter.com/AntonyKatoi" class="twitter" aria-label="Twitter Profile">
+        <i class="bi bi-twitter"></i>
+      </a>
+      <a href="https://www.facebook.com/AntonyKatoi" class="facebook" aria-label="Facebook Page">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/AntonyKatoiDavid" class="instagram" aria-label="Instagram Profile">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/AntonyKatoi" class="linkedin" aria-label="LinkedIn Profile">
+        <i class="bi bi-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Scroll to Top -->
+  <a href="#" id="scroll-top" class="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

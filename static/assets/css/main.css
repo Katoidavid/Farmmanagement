@@ -1,0 +1,545 @@
+/* General */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e6ffe6; /* Light green background for organic theme */
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #005700; /* Dark green for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00a000; /* Brighter green for hover state */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* Header */
+.header {
+  background-color: #006600; /* Dark green */
+  color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo h1 {
+  color: #ffffff; /* White text */
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+
+/* Hide mobile navigation toggle on larger screens */
+.mobile-nav-toggle {
+  display: none; /* Default is hidden */
+}
+
+/* Show only on smaller screens */
+@media (max-width: 768px) {
+  .mobile-nav-toggle {
+    display: inline-block; /* Visible on smaller screens */
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+
+/* Navigation Menu */
+.header .navmenu ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+
+.header .navmenu ul li {
+  display: inline;
+}
+
+.header .navmenu ul li a {
+  color: #ffffff;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.header .navmenu ul li a.active,
+.header .navmenu ul li a:hover {
+  background-color: #00a000; /* Brighter green for active and hover states */
+}
+
+.header .header-social-links a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.header .header-social-links a:hover {
+  color: #0a58ca;
+}
+
+/* Footer */
+.footer {
+  background-color: #004d00; /* Darker green for footer */
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer .copyright p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+
+.footer .copyright a {
+  color: #ff0000; /* Red text */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer .copyright a:hover {
+  color: #cc0000; /* Darker red on hover */
+  text-decoration: underline;
+}
+.footer .social-links a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0 10px;
+}
+
+.footer .social-links a:hover {
+  color: #0a58ca;
+}
+
+/* Scroll to Top */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #006600;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+  display: none;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-top:hover {
+  background-color: #00a000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header .navmenu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header .navmenu ul li {
+    text-align: center;
+  }
+
+  .header .header-social-links {
+    margin-top: 10px;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff; /* White text for contrast on the background */
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text readability */
+  z-index: 1;
+}
+
+.container-hero {
+  position: relative;
+  z-index: 2; /* Above the overlay */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Hero Content */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Mission & Vision Section */
+.mission-vision-container {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 10px;
+  color: #000000; /* Dark green text for an organic feel */
+  max-width: 700px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.mission-vision-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #006600; /* Primary green color */
+}
+
+.mission-vision-container h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #005700; /* Slightly darker green */
+}
+
+.mission-vision-container p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .mission-vision-container {
+    padding: 15px;
+  }
+
+  .mission-vision-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .mission-vision-container h3 {
+    font-size: 1rem;
+  }
+}
+
+/* About Us Section */
+
+/* Header Section */
+.about-header {
+  background-color: #e9f7ea; /* Light green background */
+  color: #004d00; /* Dark green text */
+  padding: 50px 0;
+}
+
+.about-header .main-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #006600; /* Primary green */
+}
+
+.about-header .intro-text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #6c757d; /* Muted text */
+}
+
+/* About Section */
+.about-section {
+  background-color: #ffffff; /* White background for contrast */
+  color: #333333; /* Dark text for readability */
+  padding: 50px 20px;
+}
+
+.about-section .sub-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.about-section .description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-section .offer-list li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-section .offer-list li i {
+  color: #007bff; /* Primary blue for icons */
+  font-size: 1.2rem;
+}
+
+.about-section .offer-list li strong {
+  color: #004d00; /* Dark green for keywords */
+  font-weight: 700;
+}
+
+/* Columns Responsiveness */
+.about-section .col-lg-6 {
+  margin-bottom: 30px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .about-header .main-heading {
+    font-size: 2rem;
+  }
+
+  .about-header .intro-text {
+    font-size: 1rem;
+  }
+
+  .about-section .sub-heading {
+    font-size: 1.5rem;
+  }
+
+  .about-section .description {
+    font-size: 0.9rem;
+  }
+
+  .about-section .offer-list li {
+    font-size: 0.9rem;
+  }
+}
+
+.product-image {
+  width: 100%;        /* Make the image fill the card width */
+  height: 200px;      /* Set a consistent height */
+  object-fit: cover;  /* Ensures the image fits without distortion */
+  border-radius: 5px; /* Optional: Matches the card style */
+}
+
+
+/* About Us Section */
+
+/* Header Section */
+.about-header {
+  background-color: #e9f7ea; /* Light green background */
+  color: #004d00; /* Dark green text */
+  padding: 50px 0;
+}
+
+.about-header .main-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #006600; /* Primary green */
+}
+
+.about-header .intro-text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #6c757d; /* Muted text */
+}
+
+/* About Section */
+.about-section {
+  background-color: #ffffff; /* White background for contrast */
+  color: #333333; /* Dark text for readability */
+  padding: 50px 20px;
+}
+
+.about-section .sub-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.about-section .description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-section .offer-list li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-section .offer-list li i {
+  color: #007bff; /* Primary blue for icons */
+  font-size: 1.2rem;
+}
+
+.about-section .offer-list li strong {
+  color: #004d00; /* Dark green for keywords */
+  font-weight: 700;
+}
+
+/* Columns Responsiveness */
+.about-section .col-lg-6 {
+  margin-bottom: 30px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .about-header .main-heading {
+    font-size: 2rem;
+  }
+
+  .about-header .intro-text {
+    font-size: 1rem;
+  }
+
+  .about-section .sub-heading {
+    font-size: 1.5rem;
+  }
+
+  .about-section .description {
+    font-size: 0.9rem;
+  }
+
+  .about-section .offer-list li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Contact Section Styling */
+
+/* Section Title */
+.container.section-title h2 {
+  color: #006600; /* Primary green */
+  font-family: 'Roboto', sans-serif; /* Clean and modern font */
+  text-transform: uppercase;
+}
+
+.container.section-title p {
+  color: #555; /* Neutral gray for description */
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Info Items */
+.info-wrap {
+  background: #f9fdf9; /* Light greenish background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.info-item i {
+  font-size: 2rem;
+  color: #004d00; /* Dark green */
+  margin-right: 15px;
+}
+
+.info-item h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #006600; /* Primary green */
+}
+
+.info-item p {
+  font-size: 1.1rem;
+  color: #555; /* Neutral gray */
+}
+
+/* Map Styling */
+iframe {
+  border: 2px solid #004d00; /* Dark green border for the map */
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Contact Form */
+.col-md-12 {
+  background: #ffffff; /* White background for contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #004d00; /* Dark green */
+  margin-bottom: 1.5rem;
+}
+
+form .btn-success {
+  background-color: #006600; /* Primary green */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+form .btn-success:hover {
+  background-color: #004d00; /* Darker green on hover */
+}
+
+form label {
+  font-weight: 500;
+  color: #555; /* Neutral gray */
+}
+
+form input,
+form textarea {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: #f8f8f8; /* Slight background tint */
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #006600; /* Highlight on focus */
+  box-shadow: 0 0 5px rgba(0, 102, 0, 0.3);
+}

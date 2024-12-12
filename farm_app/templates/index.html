@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+  <section id="hero" class="hero section" style="background-image: url('{% static 'assets/img/farm1.jpg' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="hero-overlay"></div>
+    <div class="container-hero d-flex flex-column align-items-center">
+      <!-- Welcome section (left) -->
+      <div class="content-container" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="hero-title">Welcome to PHOEMARK ORGANIC FARM</h2>
+        <p class="hero-subtitle">Your trusted provider of fresh produce and poultry in Kathiani, Kitui County.</p>
+      </div>
+
+      <!-- Mission & Vision section (right) -->
+      <div class="mission-vision-container" data-aos="fade-in" data-aos-delay="300">
+        <h2>Mission & Vision</h2>
+        <div class="mission">
+          <h3>Mission</h3>
+          <p>To provide high-quality, fresh, and organic produce to our community while promoting sustainable farming practices.</p>
+        </div>
+        <div class="vision">
+          <h3>Vision</h3>
+          <p>To be the leading provider of fresh farm produce in the World, recognized for our quality and commitment to sustainability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

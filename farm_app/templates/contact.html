@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <main class="main">
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="text-align: center; font-weight: bold; font-size: 2.5rem; margin-bottom: 1rem;">
+          Contact
+        </h2>
+        <p style="text-align: center; font-size: 1.2rem; line-height: 1.5;">
+          It is very simple. Just fill the contact form and we will come back to you. You can contact us here by also emailing us directly or calling.
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Kabati, Kitui, 56-90205</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+254768432814</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>katoiantony@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5599.313943250287!2d37.7834539964715!3d-1.1508086402383484!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1825c7006e45bd83%3A0x5e379acac03f1e68!2sKathiani%20Catholic%20Church!5e1!3m2!1sen!2ske!4v1734002528545!5m2!1sen!2ske" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="col-md-12 p-4 bg-light rounded shadow-sm">
+              <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h3>Get In Touch</h3>
+                {{ form.as_p }}
+                <div class="d-flex justify-content-center mt-3">
+                  <button type="submit" class="btn btn-success px-4 py-2">SUBMIT YOUR MESSAGE</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div><!-- End Contact Form -->
+      </div>
+    </section><!-- /Contact Section -->
+
+  </main>
+
+{% endblock %}
