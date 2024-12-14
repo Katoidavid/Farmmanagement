@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<body class="container">
+    <h1 class="mt-5">Login</h1>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </div>
+        <div class="mb-3">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    {% if form.errors %}
+        <div class="alert alert-danger mt-3">
+            <strong>Error:</strong> Invalid credentials, please try again.
+        </div>
+    {% endif %}
+
+     <div >
+            <p>Already logged in? <a href="{% url 'logout' %}" class="text-danger">Logout</a></p>
+        </div>
+
+{% endblock %}

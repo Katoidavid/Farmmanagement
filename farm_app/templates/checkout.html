@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="checkout-page">
+    <div class="row">
+        <!-- Checkout Form Section -->
+        <div class="col-6">
+            <h2>Checkout</h2>
+            <form method="post" class="checkout-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Place Order</button>
+            </form>
+        </div>
+
+        <!-- Cart Items Section -->
+        <div class="col-6">
+            <h2>Your Cart</h2>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                    <tr>
+                        <td>{{ item.product.name }}</td>
+                        <td>${{ item.product.price|floatformat:2 }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>${{ item.get_total_price|floatformat:2 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="cart-total">
+                <p><strong>Total:</strong> Ksh{{ total|floatformat:2 }}</p>
+                <!-- Pay Button -->
+                <form method="post" action="{% url 'mpesaapi' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success">Pay with MPesa</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

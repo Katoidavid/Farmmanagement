@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 #from django.conf.global_settings import STATICFILES_DIRS, MEDIA_ROOT, MEDIA_URL
@@ -107,7 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+# Authentication redirections
+LOGIN_URL = '/login/'  # Redirect after successful login
+LOGOUT_REDIRECT_URL = '/accounts/login/'  # Redirect after logout
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

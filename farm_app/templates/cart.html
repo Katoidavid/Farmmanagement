@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="cart-container">
+    <h2>Your Cart</h2>
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>${{ item.product.price|floatformat:2 }}</td>
+                    <td>
+                        <form method="post" action="{% url 'update_cart' item.id %}">
+                            {% csrf_token %}
+                            <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" min="1" />
+                            <button class="btn-update" type="submit">Update</button>
+                        </form>
+                    </td>
+                    <td>Ksh{{ item.get_total_price|floatformat:2 }}</td>
+                    <td>
+                        <a class="btn-remove" href="{% url 'remove_from_cart' item.id %}">Remove</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="cart-total">
+        <p><strong>Total:</strong> Ksh{{ total|floatformat:2 }}</p>
+        <a class="btn-checkout" href="{% url 'checkout' %}">Proceed to Checkout</a>
+    </div>
+</div>
+
+<div class="products-container">
+    <h3>Products</h3>
+    <ul class="product-list">
+        {% for product in products %}
+            <li class="product-item">
+                <span>{{ product.name }}</span>
+                <span>${{ product.price|floatformat:2 }}</span>
+                <a class="btn-add-to-cart" href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

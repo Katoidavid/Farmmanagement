@@ -34,15 +34,25 @@
         <h1>Phoemark Farm</h1>
       </a>
       <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="{% url 'home' %}" class="active">Home</a></li>
-          <li><a href="{% url 'about' %}">About Us</a></li>
-          <li><a href="{% url 'shop' %}">Products</a></li>
-          <li><a href="{% url 'contact' %}">Contact</a></li>
-          <li><a href="{% url 'login' %}">Login</a></li>
-        </ul>
-        <i class="mobile-nav-toggle bi bi-list"></i>
-      </nav>
+    <ul>
+        <li><a href="{% url 'home' %}" class="active">Home</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'product' %}">Products</a></li>
+        <li><a href="{% url 'add_product' %}">Add Product</a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Purchase
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'cart' %}">Cart</a></li>
+                <li><a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a></li>
+            </ul>
+        </li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+    <i class="mobile-nav-toggle bi bi-list"></i>
+</nav>
+
       <div class="header-social-links">
         <a href="https://twitter.com/AntonyKatoi" class="twitter"><i class="bi bi-twitter"></i></a>
         <a href="https://www.facebook.com/AntonyKatoi" class="facebook"><i class="bi bi-facebook"></i></a>

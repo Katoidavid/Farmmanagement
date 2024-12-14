@@ -1,3 +1,5 @@
+
+<!--adding dynamically-->
 {% extends 'base.html' %}
 {% load static %}
 
@@ -8,100 +10,29 @@
     <!-- Title -->
     <h3 class="text-center mb-4">Our Products</h3>
     <p class="text-center mb-5">
-      At Phoemar, we offer a variety of products grown and produced with care. Our diverse selection includes:
+      At Phoemark, we offer a variety of products grown and produced with care. Our diverse selection includes:
     </p>
 
     <!-- Products Grid -->
     <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for product in products %}
       <div class="col">
         <div class="card h-100 product-card">
-          <img src="{% static 'assets/img/images/onions.png' %}" class="card-img-top product-image" alt="Onions">
-          <div class="card-body">
-            <h5 class="card-title">Onions</h5>
-            <p class="card-text">Fresh, organic onions grown with the best farming practices, delivering great taste and quality.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 product-card">
-          <img src="{% static 'assets/img/images/watermelon.png' %}" class="card-img-top product-image" alt="Watermelon">
-          <div class="card-body">
-            <h5 class="card-title">Watermelon</h5>
-            <p class="card-text">Sweet and juicy watermelons, grown under natural conditions to ensure top-notch flavor and nutrition.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 product-card">
-          <img src="{% static 'assets/img/images/tomatoes.png' %}" class="card-img-top product-image" alt="Tomatoes">
-          <div class="card-body">
-            <h5 class="card-title">Tomatoes</h5>
-            <p class="card-text">Ripe, fresh tomatoes that are perfect for cooking or enjoying raw in your favorite salads.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+          {% if product.image %}
+          <img src="{{ product.image.url }}" class="card-img-top product-image" alt="{{ product.name }}">
+          {% else %}
+          <img src="{% static 'assets/img/default.png' %}" class="card-img-top product-image" alt="{{ product.name }}">
+          {% endif %}
 
-    <!-- Second Row -->
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-      <div class="col">
-        <div class="card h-100 product-card">
-          <img src="{% static 'assets/img/images/honey.png' %}" class="card-img-top product-image" alt="Honey">
           <div class="card-body">
-            <h5 class="card-title">Honey</h5>
-            <p class="card-text">Pure, natural honey harvested directly from our beehives, with no additives or preservatives.</p>
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text"><strong>Price:</strong> KSh {{ product.price|floatformat:2 }}</p>
+            <p class="card-text"><strong>Quantity:</strong> {{ product.quantity }}</p>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card h-100 product-card">
-          <img src="{% static 'assets/img/images/chicken.png' %}" class="card-img-top product-image" alt="Chicken">
-          <div class="card-body">
-            <h5 class="card-title">Chicken</h5>
-            <p class="card-text">Free-range, healthy chickens raised in a clean, safe environment, offering the best poultry products.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 product-card">
-          <img src="{% static 'assets/img/images/fish.png' %}" class="card-img-top product-image" alt="Fish">
-          <div class="card-body">
-            <h5 class="card-title">Fish</h5>
-            <p class="card-text">Fresh, farm-raised fish from our well-maintained fishponds, offering a healthy protein source.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Third Row -->
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-      <div class="col">
-        <div class="card h-100 product-card">
-          <img src="{% static 'assets/img/images/maize.png' %}" class="card-img-top product-image" alt="Maize">
-          <div class="card-body">
-            <h5 class="card-title">Maize</h5>
-            <p class="card-text">Organically grown maize, perfect for flour production or as a staple food source.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 product-card">
-          <img src="{% static 'assets/img/images/spinanch.png' %}" class="card-img-top product-image" alt="Spinach">
-          <div class="card-body">
-            <h5 class="card-title">Spinach</h5>
-            <p class="card-text">Fresh, leafy spinach packed with nutrients, ideal for healthy meals.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 product-card">
-          <img src="{% static 'assets/img/images/sukuma.png' %}" class="card-img-top product-image" alt="Sukuma Wiki">
-          <div class="card-body">
-            <h5 class="card-title">Sukuma Wiki</h5>
-            <p class="card-text">Nutritious sukuma wiki, a versatile and affordable green vegetable for every meal.</p>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </main>
